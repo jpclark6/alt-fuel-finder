@@ -1,15 +1,11 @@
-## README
+require 'rails_helper'
 
-Run through the standard Rails setup.
-
-```
-$ bundle install
-$ rake db:{create,migrate}
-$ rails s
-```
-
-Navigate to `http://localhost:3000`
-
+describe 'as a user' do
+  it 'can see electric and propane name, address, fuel type, distance and access times' do
+    visit '/'
+    
+  end
+end
 
 As a user
 When I visit "/"
