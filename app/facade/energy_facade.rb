@@ -5,11 +5,19 @@ class EnergyFacade
   end
 
   def stations
-    x = search_results.stations
-    binding.pry
-    search_results.stations.map do |station|
+    find_stations.map do |station|
+      binding.pry
+      name = station[:station_name]
+      address = 
+      fuel_type =
+      distance = 
+      access_times = 
 
     end.first(10)
+  end
+
+  def find_stations
+    search_results.stations[:fuel_stations]
   end
 
   private
