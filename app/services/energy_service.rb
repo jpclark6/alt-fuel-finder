@@ -5,13 +5,18 @@ class EnergyService
   end
 
   def stations
-    get_json("/api/alt-fuel-stations/v1/nearest?api_key=#{ENV['API_KEY']}&format=json&location=#{@zip}&radius=6&fuel_type=ELEC,LPG")
+    raw_json = get_json("/api/alt-fuel-stations/v1/nearest?api_key=#{ENV['API_KEY']}&format=json&location=#{@zip}&radius=6&fuel_type=ELEC,LPG")
+    JSON.parse(raw_json.body, symbolize_names: true)
   end
 
   private
 
+  def get_json(url)
+    conn.get(url)
+  end
+
   def conn
-    Faraday.new(url: https://developer.nrel.gov) do |faraday|
+    Faraday.new(url: 'https://developer.nrel.gov') do |faraday|
       faraday.adapter Faraday.default_adapter
     end
   end

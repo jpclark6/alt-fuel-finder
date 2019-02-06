@@ -5,6 +5,8 @@ class EnergyFacade
   end
 
   def stations
+    x = search_results.stations
+    binding.pry
     search_results.stations.map do |station|
 
     end.first(10)
