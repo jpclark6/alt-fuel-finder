@@ -15,6 +15,13 @@ class EnergyFacade
   end
 
   def build_address(station)
+    street_address = station[:street_address]
+    city = station[:city]
+    state = station[:state]
+    "#{street_address}, #{city}, #{state}"
+  end
+
+  def find_fuel(station)
     binding.pry
   end
 
