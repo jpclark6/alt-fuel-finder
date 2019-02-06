@@ -14,6 +14,10 @@ describe 'as a user' do
       expect(page).to have_content('Distance: 0.31 miles')
       expect(page).to have_content('Access Times: 24 hours daily')
     end
+    expect(page).to have_no_content('HY')
+    expect(page).to have_no_content('Hydrogen')
+    expect(page).to have_no_content('LNG')
+    expect(page).to have_no_content('Natural Gas')
   end
 end
 

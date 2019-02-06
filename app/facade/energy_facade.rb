@@ -22,7 +22,12 @@ class EnergyFacade
   end
 
   def find_fuel(station)
-    binding.pry
+    fuel_type = station[:fuel_type_code]
+    fuel_name[fuel_type]
+  end
+
+  def fuel_name
+    {'ELEC' => "Electric", 'LPG' => 'Propane'}
   end
 
   def find_stations
