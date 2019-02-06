@@ -13,6 +13,7 @@ gem 'faraday'
 gem 'figaro'
 
 group :development, :test do
+  gem 'pry'
   gem 'byebug'
   gem 'rspec-rails'
 end
