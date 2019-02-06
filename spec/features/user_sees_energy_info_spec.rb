@@ -8,11 +8,11 @@ describe 'as a user' do
     expect(current_path).to eq('/search')
     expect(all('.station').length).to eq(10)
     within(all('.station').first) do
-      expect(page).to have_content('Name: ')
-      expect(page).to have_content('Address: ')
-      expect(page).to have_content('Fuel Types: ')
-      expect(page).to have_content('Distance: ')
-      expect(page).to have_content('Access Times: ')
+      expect(page).to have_content('Name: UDR')
+      expect(page).to have_content('Address: 800 Acoma St, Denver, CO')
+      expect(page).to have_content('Fuel Types: Electric')
+      expect(page).to have_content('Distance: 0.31 miles')
+      expect(page).to have_content('Access Times: 24 hours daily')
     end
   end
 end
