@@ -12,7 +12,7 @@ class EnergyService
   private
 
   def get_json(url)
-    conn.get(url)
+    @_search_results ||= conn.get(url)
   end
 
   def conn

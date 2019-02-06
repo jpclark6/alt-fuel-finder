@@ -19,13 +19,23 @@ describe 'as a user' do
     expect(page).to have_no_content('LNG')
     expect(page).to have_no_content('Natural Gas')
   end
-end
 
-# As a user
-# When I visit "/"
-# And I fill in the search form with 80203 (Note: Use the existing search form)
-# And I click "Locate"
-# Then I should be on page "/search"
-# Then I should see a list of the 10 closest stations within 6 miles sorted by distance
-# And the stations should be limited to Electric and Propane
-# And for each of the stations I should see Name, Address, Fuel Types, Distance, and Access Times
+  it 'works on more than one zip code' do
+    visit '/'
+    fill_in :q, with: '81507'
+    click_button 'Locate'
+    expect(current_path).to eq('/search')
+    expect(all('.station').length).to eq(10)
+    within(all('.station').first) do
+      expect(page).to have_content('AmeriGas')
+      expect(page).to have_content('Address: 690 Railroad Blvd, Grand Junction, CO')
+      expect(page).to have_content('Fuel Types: Propane')
+      expect(page).to have_content('Distance: 2.46 miles')
+      expect(page).to have_content('Access Times: 7:30am-4pm M-F; must have state decal')
+    end
+    expect(page).to have_no_content('HY')
+    expect(page).to have_no_content('Hydrogen')
+    expect(page).to have_no_content('LNG')
+    expect(page).to have_no_content('Natural Gas')
+  end
+end
