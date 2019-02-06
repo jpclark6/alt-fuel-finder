@@ -8,7 +8,7 @@ describe 'as a user' do
     expect(current_path).to eq('/search')
     expect(all('.station').length).to eq(10)
     within(all('.station').first) do
-      expect(page).to have_content('Name: UDR')
+      expect(page).to have_content('UDR')
       expect(page).to have_content('Address: 800 Acoma St, Denver, CO')
       expect(page).to have_content('Fuel Types: Electric')
       expect(page).to have_content('Distance: 0.31 miles')
