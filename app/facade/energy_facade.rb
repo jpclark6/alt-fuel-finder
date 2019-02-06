@@ -6,14 +6,16 @@ class EnergyFacade
 
   def stations
     find_stations.map do |station|
-      binding.pry
       name = station[:station_name]
-      address = 
-      fuel_type =
-      distance = 
-      access_times = 
-
+      address = build_address(station)
+      fuel_type = find_fuel(station)
+      distance = station[:distance]
+      access_times = station[:access_days_time]
     end.first(10)
+  end
+
+  def build_address(station)
+    binding.pry
   end
 
   def find_stations
