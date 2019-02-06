@@ -9,8 +9,15 @@ class EnergyFacade
       name = station[:station_name]
       address = build_address(station)
       fuel_type = find_fuel(station)
-      distance = station[:distance]
+      distance = station[:distance].round(2)
       access_times = station[:access_days_time]
+      params = {name: name, 
+                address: address, 
+                fuel_type: fuel_type, 
+                distance: distance,
+                access_times: access_times
+              }
+      Station.new(params)
     end.first(10)
   end
 
