@@ -9,7 +9,7 @@ describe 'as a service' do
 
   it 'has required attributes present for stations' do
     zip = 80203
-    service = EnergyService.new(zip).stations
+    service = EnergyService.new(zip).station_data
 
     expect(service.class).to eq(Hash)
     expect(service[:fuel_stations].length).to eq(20)

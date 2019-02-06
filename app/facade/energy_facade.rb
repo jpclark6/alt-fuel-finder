@@ -38,7 +38,7 @@ class EnergyFacade
   end
 
   def find_stations
-    search_results.stations[:fuel_stations]
+    search_results.station_data[:fuel_stations]
   end
 
   private
