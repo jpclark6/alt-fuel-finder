@@ -50,5 +50,4 @@ class EnergyFacade
   def search
     EnergyService.new(@zip)
   end
-
 end
